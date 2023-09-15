@@ -1,0 +1,9 @@
+###Ejercicio 4
+def missingNumbers(arr, brr):
+    # Write your code here
+    b = set(brr)
+    c = []
+    for i in b:
+        if arr.count(i) < brr.count(i):
+            c.append(i)
+    return c

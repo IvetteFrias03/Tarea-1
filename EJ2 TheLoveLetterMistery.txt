@@ -1,0 +1,13 @@
+###Ejercicio 2
+def theLoveLetterMystery(s):
+    # Write your code here
+    contador = 0; 
+    i = 0;  
+    j = len(s) -1
+
+    while(i< j):
+        if s[i] != s[j] :
+            contador += abs(ord(s[j]) - ord(s[i]))
+        i += 1
+        j -= 1
+    return contador

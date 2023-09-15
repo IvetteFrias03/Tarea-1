@@ -1,0 +1,22 @@
+###Ejercicio 9
+r = {0:1,1:1,2:0,3:0,4:0,5:0,6:0,7:1,8:1} #Para mayor optimización usamos un diccionario, 
+#ya que ocupan menos memoria
+def gameOfStones(n):
+    # Write your code here
+    result = r.get(n, None)
+#Obtenemos el valor del item en la posición "n" con su respectiva llave
+#Lo guardamos en la variable "result", este es el num de piedras
+    if not result == None:
+#Si aún hay piedras...
+        return 'First' if result == 0 else 'Second'
+#El juego sigue,entonces este jugador es el 1o
+#pero si ya no hay piedras, este sera el 2o lugar
+    for i in range(len(r), n+1):
+#Recorremos de forma retrocesiva las piedras que se van quitando
+        if r[i - 2] == 0 and r[i-3] == 0 and r[i-5] == 0:
+            r[i] = 1
+        else:
+            r[i] = 0
+#Si a este jugador llega a 0 piedras (en n+1)
+#entonces el que tuvo el turno n, es el 1er lugar
+    return 'First' if r[n] == 0 else 'Second'

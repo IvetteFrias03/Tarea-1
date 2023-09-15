@@ -1,0 +1,6 @@
+### Ejercicio 5
+def decentNumber(i):
+        if  i in (1,2,4,7): print(-1); return
+        arbol = (0, 10, 5)[i%3]
+        print('5'*(i-arbol)+'3'*arbol)
+

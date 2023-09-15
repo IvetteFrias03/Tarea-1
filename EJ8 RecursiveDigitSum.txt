@@ -1,0 +1,15 @@
+### Ejercicio 8
+def superDigit(n, k):
+    # Write your code here
+    def aux(n):
+        total = 0
+        for numero in n:
+            total += int(numero)
+        total = str(total)
+        if len(total) == 1:
+            return total
+        else:
+            return aux(total)
+    
+    p = str(aux(n)*k)
+    return aux(p)

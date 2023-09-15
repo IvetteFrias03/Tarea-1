@@ -1,0 +1,21 @@
+### Ejercicio 3 
+        arr_sort = sorted(arr) #Ordenamos el arreglo de menor a mayor
+        sd = abs(arr_sort[-1] - arr_sort[0]) 
+# sd = valor absoluto de el último elemento del arreglo (ordenado) 
+#menos el primero
+        ans = [] #Arreglo donde guardaremos el resultado
+        for i,x in enumerate(arr_sort): # i y x iterarán en el arreglo ordenado
+            if i+1 < len(arr_sort): # Si i es menor a la longitud del arreglo y...
+                if abs(x - arr_sort[i+1]) < sd: 
+  #Si, además, la diferencia entre el iterador x y los elementos del arreglo
+  #son menores a la diferencia "más grande"
+                    ans.clear() #Vaciamos el arreglo de respuesta
+                    ans.extend([x, arr_sort[i+1]]) 
+#Guarda qué número tenia x cuando pasó esto y el valor del arreglo siguiente
+                    sd = abs(x - arr_sort[i+1]) #Calculamos la nueva diferencia "más grande"
+                elif abs(x - arr_sort[i+1]) == sd: 
+  #En caso de que ya no exista una diferencia "más grande", terminamos
+                    ans.extend([x, arr_sort[i+1]])
+#Y guardamos el valor de x donde ocurrió esto
+    return ans
+#Imprimimos el arreglo ans

@@ -1,0 +1,8 @@
+###Ejercicio 1
+def saveThePrisoner(n, m, s):
+    # Write your code here
+    p = s- 1 + m%n
+    if p%n == 0:
+      return n
+    else:
+      return p%n
